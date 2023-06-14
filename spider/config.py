@@ -4,8 +4,8 @@ class spider_config:
     LOGIN_URL = "https://db.menet.com.cn/#/login"
     DRUG_EXPLAIN = "https://db.menet.com.cn/#/drugexplain?nav=6&sort=5"
     ACCOUNT = {
-        "account": "taiji",
-        "password": "123456"
+        "account": "XX",
+        "password": "XX"
     }
     RETRY_TIMES = 16
 
