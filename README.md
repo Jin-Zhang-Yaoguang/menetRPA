@@ -1,33 +1,11 @@
-# menetRPA
 
 
-@startuml
+在使用selenium RPA米特网用药说明数据过程中，尝试到一些有意思的技术点，特此记录。
+- 自动登录：自动输入账号密码点击登录。
+- 更改页码：对于不支持快速跳转的列表翻页，可以通过修改html值的方式，改成目标页码，再点击跳转。
 
-start
-partition 初始化 {
-    :           账号: 账号、密码           ;
-	  : 链接：登录链接、目标页面链接  ;
-    :     参数: 开始页面、结束页面     ;
-}
 
-partition 登录初始化 {
-    :  登录：输入账号密码、点击登录  ;
-    :          进入：进入目标页面         ;
-}
-partition 获取目标范围页面数据 {
-    :获取当前页面;
-	  if (当前页面=开始页面) then (true)
-    else
-        :修改html将当前页面改为开始页面数;
-				:点击修改后的页面数;
-    endif
+具体流程如下图所示
 
-		while (当前页面 < 结束页面) is (true)
-    	  :获取当前页面数;
-				:获取page_source并存储;
-				:点击下一页;
-		endwhile (false)
-}
-stop
-
-@enduml
+<img width="215" alt="image" src="https://github.com/Jin-Zhang-Yaoguang/menetRPA/assets/67220802/84f4dab4-d17d-4049-b87f-991994edda85">
+    
